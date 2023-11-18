@@ -25,7 +25,7 @@ void bubblesort(int vetor[], int tam){
 		printf("%d ", vetor[i]);
 	}
 	
-//	printf("\nTempo gasto em Bubble Sort: %.3000f",bubbletemp );
+	printf("\nTempo gasto em Bubble Sort: %.3000f",bubbletemp );
 	
 	
 }
@@ -48,7 +48,7 @@ void insertonsort(int vetor[], int tam){
 		printf("%d ", vetor[i]);
 	}
 	
-//	printf("\nTempo gasto em Insert On Sort: %.3000f",inserttemp );
+	printf("\nTempo gasto em Insert On Sort: %.3000f",inserttemp );
 	
 	
 	
@@ -76,7 +76,7 @@ void selectionsort(int vetor[], int tam){
 	for(i = 0; i < tam; i++){
 		printf("%d ", vetor[i]);
 	}
-//	printf("\nTempo gasto em Select on Sort: %.3000f",selecttemp );
+	printf("\nTempo gasto em Select on Sort: %.3000f",selecttemp );
 	
 
 	
@@ -105,7 +105,7 @@ void quickSort(int vetor[], int l, int h){
 	
 	int i;
 	if (l < h) {
-		/* Partitioning index */
+		
 		int p = partition(vetor, l, h);
 		quickSort(vetor, l, p - 1);
 		quickSort(vetor, p + 1, h);
@@ -117,8 +117,8 @@ void quickSort(int vetor[], int l, int h){
 int main(){
 	clock_t start, end;
 	int tam, i, op;
-//	printf("Qual o tamanho da sequencia?\n");
-	//scanf("%d", &tam);
+	printf("Qual o tamanho da sequencia?\n");
+	scanf("%d", &tam);
 	tam=30;
 	
 	long double bubble, insert, select, quick;
@@ -137,10 +137,10 @@ int main(){
 		vetorquick[i]  = vetorbubble[i];	
 	}
 	
-//	printf("\nDigite a sequencia do Vetor:\n");
-//	for(i = 0; i < tam; i++){
-//		scanf("%d", &vetor[i]);
-//	}
+	printf("\nDigite a sequencia do Vetor:\n");
+	for(i = 0; i < tam; i++){
+		scanf("%d", &vetor[i]);
+	}
 	
 	printf("\nVetor sem ordenar: ");
 	
@@ -153,40 +153,40 @@ int main(){
 	printf("\n");
 	
 	
-//	printf("Com qual algoritimo deseja ordenar a sequencia?\n");
-//	printf("1. Insert on sort\n2. selection sort\n3. Bubble sort\n4.QuickSort\n9. Sair\n");
-//	scanf("%d", &op);
+	printf("Com qual algoritimo deseja ordenar a sequencia?\n");
+	printf("1. Insert on sort\n2. selection sort\n3. Bubble sort\n4.QuickSort\n9. Sair\n");
+	scanf("%d", &op);
 	
-//	switch (op){
+	switch (op){
 	
-	//	case 1:
+		case 1:
 			printf("Inser on Sort:\n");
 			start = clock();
 			insertonsort(vetorinset, tam);
 			end = clock();
 			insert = ((long double) (end - start)) / CLOCKS_PER_SEC;
 			printf("\nTempo gasto em Insert On Sort: %Lf",insert);
-	//	break;
+		break;
 		
-	//	case 2:
+		case 2:
 			printf("\n\nSelect on Sort:\n");
 			start = clock();
 			selectionsort(vetorselect, tam);
 			end = clock();
 			select = ((long double) (end - start)) / CLOCKS_PER_SEC;
 			printf("\nTempo gasto em Select on Sort: %Lf",select);
-	//	break;
+		break;
 		
-	//	case 3:
+		case 3:
 			 printf("\n\nBubble Sort:\n");
 			 start = clock();
 			 bubblesort(vetorbubble, tam);
 			 end = clock();
 		     bubble = ((long double) (end - start)) / CLOCKS_PER_SEC;
 			 printf("\nTempo gasto em Bubble Sort: %Lf", bubble);
-	//	break;
+		break;
 		
-	//	case 4:
+		case 4:
 			printf("\n\nQuick Sort:\n");
 			
 			start = clock();
@@ -219,14 +219,14 @@ int main(){
 		
 			
 			
-	//	break;
+		break;
 		
-	//	case 9:
+		case 9:
 			
 	
 		
 			
-	//}
+	}
 
 	
-//}
+}
